@@ -48,50 +48,5 @@
  * The autonomous task may exit, unlike operatorControl() which should never exit. If it does
  * so, the robot will await a switch to another mode or disable/enable cycle.
  */
-
-/*
- * Left Front: 1
- * Left Rear: 2
- * Right Rear: 9
- * Right Front: 10
- */
-
 void autonomous() {
-	Encoder leftEnc; //Sets encoder variable
-	Encoder rightEnc;
-
-	leftEnc = encoderInit(1, 2, 0); //Points to encoders
-	rightEnc= encoderInit(3, 4, 0);
-
-	encoderReset(leftEnc); //Resets Encoder
-	encoderReset(rightEnc);
-
-	int leftVal; //Initializes value variable
-	int rightVal;
-
-	leftVal = encoderGet(leftEnc); //Gets initial value for encoder
-	rightVal= encoderGet(rightEnc);
-
-	motorSet(1, 127); //Motors Forward
-	motorSet(2, 127);
-	motorSet(9, -127);
-	motorSet(10, 127);
-
-	while(leftVal <= 360 && rightVal <= 360) {
-
-		leftVal = encoderGet(leftEnc);  //Gets encoder value
-		rightVal= encoderGet(rightEnc);
-
-	}
-
-	motorSet(1, 0); //Stops Motors
-	motorSet(2, 0);
-	motorSet(9, 0);
-	motorSet(10, 0);
-
-
-
-
-
-
 }

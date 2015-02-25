@@ -61,7 +61,7 @@ void autonomous() {
 	Encoder rightEnc;
 
 	leftEnc = encoderInit(1, 2, 0); //Points to encoders
-	rightEnc= encoderInit(3, 4, 0);
+	rightEnc= encoderInit(3, 4, 1);
 
 	encoderReset(leftEnc); //Resets Encoder
 	encoderReset(rightEnc);
@@ -73,7 +73,7 @@ void autonomous() {
 	rightVal= encoderGet(rightEnc);
 
 	motorSet(1, 127); //Motors Forward
-	motorSet(2, 127);
+	motorSet(2, -127);
 	motorSet(9, -127);
 	motorSet(10, 127);
 

@@ -73,9 +73,9 @@ void autonomous() {
 	rightVal= encoderGet(rightEnc);
 
 	motorSet(1, 127); //Motors Forward
-	motorSet(2, 127);
+	motorSet(2, -127);
 	motorSet(9, -127);
-	motorSet(10, 127);
+	motorSet(10, -127);
 
 	while(leftVal <= 360 && rightVal <= 360) {
 

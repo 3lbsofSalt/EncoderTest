@@ -57,34 +57,33 @@
  */
 
 void autonomous() {
-	Encoder leftEnc; //Sets encoder variable
+	Encoder leftEnc;
 	Encoder rightEnc;
 
-	leftEnc = encoderInit(1, 2, 0); //Points to encoders
-	rightEnc= encoderInit(3, 4, 0);
+	leftEnc = encoderInit(1, 2, 0);
+	rightEnc= encoderInit(3, 4, 1);
 
-	encoderReset(leftEnc); //Resets Encoder
+	encoderReset(leftEnc);
 	encoderReset(rightEnc);
 
-	int leftVal; //Initializes value variable
+	int leftVal;
 	int rightVal;
 
-	leftVal = encoderGet(leftEnc); //Gets initial value for encoder
+	leftVal = encoderGet(leftEnc);
 	rightVal= encoderGet(rightEnc);
 
-	motorSet(1, 127); //Motors Forward
-	motorSet(2, 127);
+	motorSet(1, 127);
+	motorSet(2, -127);
 	motorSet(9, -127);
 	motorSet(10, 127);
 
 	while(leftVal <= 360 && rightVal <= 360) {
 
-		leftVal = encoderGet(leftEnc);  //Gets encoder value
-		rightVal= encoderGet(rightEnc);
+		leftVal = encoderGet(leftEnc);
 
 	}
 
-	motorSet(1, 0); //Stops Motors
+	motorSet(1, 0);
 	motorSet(2, 0);
 	motorSet(9, 0);
 	motorSet(10, 0);
